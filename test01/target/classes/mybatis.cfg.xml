@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+	</settings>
+	
+	<!-- 给类取类的别名 -->
+	<typeAliases>
+		<!-- <typeAlias type=""/> -->
+		<package name="org.framestudy.spring_mybatis.usermag.beans"/>
+	</typeAliases>
+	
+	<!-- 数据库的连接环境，mybatis会给每一个环境产生一个对应的数据库连接池 -->
+	<environments default="01">
+		<environment id="01">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="org.gjt.mm.mysql.Driver"/>
+		
+				<property name="url" value="jdbc:mysql://localhost:3306/spring-mybatis?useUnicode=true&amp;characterEncoding=UTF-8"/>
+				<property name="username" value="root"/>
+				<property name="password" value="lovo"></property>
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+
+	 	<package name="org.framestudy.spring_mybatis.usermag.mapper"/>
+	</mappers>
+	
+	
+</configuration>
